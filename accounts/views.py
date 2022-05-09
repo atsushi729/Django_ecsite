@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from accounts.models import CustomUser
-from accounts.forms import ProfileFrom
+from accounts.forms import ProfileForm
 
 
 class ProfileView(View):
@@ -12,12 +12,13 @@ class ProfileView(View):
             'user_data': user_data,
         })
 
+
 class ProfileEditView(View):
     def get(self, request, *args, **kwargs):
         user_data = CustomUser.objects.get(id=request.user.id)
-        form = ProfileFrom(
+        form = ProfileForm(
             request.POST or None,
-            initial = {
+            initial={
                 'first_name': user_data.first_name,
                 'last_name': user_data.last_name,
                 'department': user_data.department,
@@ -25,11 +26,11 @@ class ProfileEditView(View):
         )
 
         return render(request, 'accounts/profile_edit.html', {
-            'form': form
+            'form': form,
         })
 
     def post(self, request, *args, **kwargs):
-        form = ProfileFrom(request.POST or None)
+        form = ProfileForm(request.POST or None)
         if form.is_valid():
             user_data = CustomUser.objects.get(id=request.user.id)
             user_data.first_name = form.cleaned_data['first_name']
@@ -38,6 +39,6 @@ class ProfileEditView(View):
             user_data.save()
             return redirect('profile')
 
-        return render(request, 'account/profile.html', {
+        return render(request, 'accounts/profile.html', {
             'form': form
         })

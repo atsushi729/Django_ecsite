@@ -7,9 +7,6 @@ from django.utils import timezone
 class UserManager(UserManager):
 
     def _create_user(self, email, password, **extra_fields):
-        """
-        Create and save a user with the given username, email, and password.
-        """
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
@@ -37,7 +34,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('mail address', unique=True)
     first_name = models.CharField('first name', max_length=30)
     last_name = models.CharField('last name', max_length=30)
-    department = models.CharField('community', max_length=30, blank=True)
+    department = models.CharField('department', max_length=30, blank=True)
     created = models.DateField('joined date', default=timezone.now)
 
     is_staff = models.BooleanField(

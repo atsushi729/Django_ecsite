@@ -6,37 +6,27 @@
         <h5 class="card-title text-center">profile</h5>
         <table class="profile_table mb-4">
             <tbody>
-                <tr>
-                    <th class="header">name</th>
-                    <td class="data">{{ user_data.first_name }} {{ user_data.last_name }}</td>
-                </tr>
-                <tr>
-                    <th class="header">email</th>
-                    <td class="data">{{ user_data.email }}</td>
-                </tr>
-                <tr>
-                    <th class="header">department</th>
-                    <td class="data">{{ user_data.department }}</td>
-                </tr>
-                <tr>
-                    <th class="header">joined date</th>
-                    <td class="data">{{ user_data.created }}</td>
-                </tr>
+            <tr>
+                <th class="header">name</th>
+                <td class="data">{{ user_data.first_name }} {{ user_data.last_name }}</td>
+            </tr>
+            <tr>
+                <th class="header">email</th>
+                <td class="data">{{ user_data.email }}</td>
+            </tr>
+            <tr>
+                <th class="header">department</th>
+                <td class="data">{{ user_data.department }}</td>
+            </tr>
+            <tr>
+                <th class="header">joined date</th>
+                <td class="data">{{ user_data.created }}</td>
+            </tr>
             </tbody>
         </table>
         <div class="button mx-auto text-center">
-            <a href="{{ % url 'profile_edit' % }}" class="btn btn-lg btn-warning btn-block">edit</a>
+            <a href="{% url 'profile_edit' %}" class="btn btn-lg btn-warning btn-block">edit</a>
         </div>
     </div>
 </div>
 {% endblock %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
