@@ -5,8 +5,8 @@
 <div class="card card-profile my-5 mx-auto">
     <div class="card-body">
         <h5 class="card-title text-center">profile</h5>
-        <form action="post">
-            { % csrf_token % }
+        <form method="post">
+            {% csrf_token %}
             <table class="profile_table mb-4">
                 <tbody>
                 <tr>
@@ -25,7 +25,7 @@
                 </tbody>
             </table>
             <div class="button mx-auto">
-                <button class="btn btn-lg btn-warning btn-block">register</button>
+                <button class="btn btn-lg btn-warning btn-block" type="submit">register</button>
             </div>
         </form>
     </div>
