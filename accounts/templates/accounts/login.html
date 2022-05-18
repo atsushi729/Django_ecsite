@@ -9,12 +9,12 @@
         <form method="post" class="form-auth">
             {% csrf_token %}
             <div class="form-label-group">
-                {% render_field form.login class='form-control'  placeholder='mail' %}
+                {% render_field form.login class='form-control' placeholder='mail' %}
             </div>
             <div class="form-label-group">
-                {% render_field form.password class='form-control'  placeholder='password' %}
+                {% render_field form.password class='form-control' placeholder='password' %}
             </div>
-            <button class="mx-auto">
+            <button class="mx-auto my-2">
                 <button class="btn btn-lg btn-primary btn-block mx-auto" type="submit">login</button>
             </button>
         </form>
