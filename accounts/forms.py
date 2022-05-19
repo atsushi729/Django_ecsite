@@ -1,10 +1,12 @@
 from django import forms
 from allauth.account.forms import SignupForm
 
+
 class ProfileForm(forms.Form):
     first_name = forms.CharField(max_length=30, label='family_name')
     last_name = forms.CharField(max_length=30, label='last_name')
     department = forms.CharField(max_length=30, label='department', required=False)
+
 
 class SignupUserForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='family_name')
@@ -16,4 +18,3 @@ class SignupUserForm(SignupForm):
         user.last_name = self.cleaned_data['last_name']
         user.save()
         return user
-
