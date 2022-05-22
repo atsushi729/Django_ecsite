@@ -34,7 +34,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('mail address', unique=True)
     first_name = models.CharField('first name', max_length=30)
     last_name = models.CharField('last name', max_length=30)
-    department = models.CharField('department', max_length=30, blank=True)
+    address = models.CharField('address', max_length=30, blank=True)
+    tel = models.CharField('phone', max_length=30, blank=True)
     created = models.DateField('joined date', default=timezone.now)
 
     is_staff = models.BooleanField(

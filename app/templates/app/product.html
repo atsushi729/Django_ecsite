@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="my-5">
+    <div class="product row">
+        <div class="col-md-6 mb-4">
+            <img src="{{ item_data.image.url }}" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-mb-6 mb-4">
+            <div class="card">
+                <div class="card-body px-2 py-1">
+                    <div class="p-4">
+                        <h3>{{ item_data.title }}</h3>
+                        <p class="mb-3">{{ item_data.category }}</p>
+                        <hr>
+                        <p>price:<span class="text-danger font-weight-bold">{{ item_data.price }}yen</span></p>
+                        <p class="font-weight-bold">description</p>
+                        <p>{{ item_data.description|linebreaksbr }}</p>
+                        <a href="" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
