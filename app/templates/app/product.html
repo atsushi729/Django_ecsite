@@ -17,7 +17,7 @@
                         <p>price:<span class="text-danger font-weight-bold">{{ item_data.price }}yen</span></p>
                         <p class="font-weight-bold">description</p>
                         <p>{{ item_data.description|linebreaksbr }}</p>
-                        <a href="" class="btn btn-primary">add to cart</a>
+                        <a href="{% url 'additem' item_data.slug %}" class="btn btn-primary">add to cart</a>
                     </div>
                 </div>
             </div>
