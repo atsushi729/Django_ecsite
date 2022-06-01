@@ -31,9 +31,9 @@ def addItem(request, slug):
         user=request.user,
         ordered=False
     )
-    order = Order.objects.filter(user=request.user, order=False)
+    order = Order.objects.filter(user=request.user, ordered=False)
 
-    if order.exist():
+    if order.exists():
         order = order[0]
         if order.items.filter(item__slug=item.slug).exists():
             order_item.quantity += 1
@@ -45,6 +45,7 @@ def addItem(request, slug):
         order.items.add(order_item)
 
     return redirect('order')
+
 
 class OrderView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
