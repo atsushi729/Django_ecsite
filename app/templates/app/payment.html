@@ -1,0 +1,47 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="my-5">
+    <h3>Confirm your order</h3>
+</div>
+
+<form method="POST" id="payment-form">
+    <div class="row order">
+        <div class="col-mb-9">
+            <div class="card px-4">
+                <div class="card-body px-2 py3">
+                    <div class="row">
+                        <div class="col-mb-6">
+                            <p class="font-weight-bold">Delivery address</p>
+                            <p>Name:{{ user_data.first_name }} {{ user_data.last_name }}</p>
+                            <p>Address:{{ user_data.address }}</p>
+                            <p>Phone number{{ user_data.tel }}</p>
+                        </div>
+                        <div class="col-mb-6">
+                            <p class="font-weight-bold">Payment method</p>
+                            {% csrf_token %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-mb-3">
+            <div class="card">
+                <div class="card-body text-center px-2 py-3">
+                    <div class="mb-3">
+                        <button class="btn btn-warning" type="submit">Confirm your order</button>
+                    </div>
+                    <p class="font-weight-bold">Order content</p>
+                    <p>Total order:{{ order.get_total }}Yen</p>
+                    <p>Delivery charge:FREE</p>
+                    <hr>
+                    <p class="font-weight-bold text-danger">Total cost:{{ order.get_total }}Yen</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

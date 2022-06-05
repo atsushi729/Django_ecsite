@@ -55,7 +55,7 @@
                 {% if order.get_total %}
                 <p>Total: <span class="fort-weight-bold">{{ order.get_total }}</span>Yen</p>
                 <div class="mb-3">
-                    <a href="" class="btn btn-warning">Place your order</a>
+                    <a href="{% url 'payment' %}" class="btn btn-warning">Place your order</a>
                 </div>
                 {% endif %}
                 <a href="/" class="btn btn-primary">Continue shopping</a>

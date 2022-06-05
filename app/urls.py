@@ -8,6 +8,7 @@ urlpatterns = [
     path('order/', views.OrderView.as_view(), name='order'),
     path('removeitem/<slug>', views.removeItem, name='removeitem'),
     path('removesingleitem/<slug>', views.removeSingleItem, name='removesingleitem'),
+    path('payment', views.PaymentView.as_view(), name='payment'),
 ]
 
 
