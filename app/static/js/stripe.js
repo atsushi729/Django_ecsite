@@ -1,4 +1,3 @@
-//var stripe = Stripe('pk_test_51L9rXtJicTUCCtWLd6mfWWvXMiw5yKJKM5kcCm3qQWzVpRlmAk1HFcRnrh2sUGCuRq09oTpiufDanoCaUHXGK01e00l5mEyx3T');
 var stripe = Stripe('pk_test_51L9rXtJicTUCCtWLd6mfWWvXMiw5yKJKM5kcCm3qQWzVpRlmAk1HFcRnrh2sUGCuRq09oTpiufDanoCaUHXGK01e00l5mEyx3T');
 var elements = stripe.elements();
 

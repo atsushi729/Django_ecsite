@@ -119,7 +119,7 @@ class PaymentView(LoginRequiredMixin, View):
         return render(request, 'app/payment.html', context)
 
     def post(self, request, *args, **kwargs):
-        stripe.spi_key = settings.STRIPE_SECRET_KEY
+        stripe.api_key = settings.STRIPE_SECRET_KEY
         order = Order.objects.get(user=request.user, ordered=False)
         token = request.POST.get('stripeToken')
         order_items = order.items.all()
