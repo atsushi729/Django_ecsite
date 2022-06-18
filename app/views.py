@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.models import CustomUser
 import stripe
 from django.conf import settings
+from app.forms import SignupSellerForm
 
 
 class IndexView(View):
@@ -154,3 +155,9 @@ class PaymentView(LoginRequiredMixin, View):
 class ThanksView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         return render(request, 'app/thanks.html')
+
+
+class Sell(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/sell.html')
+

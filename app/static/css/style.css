@@ -64,6 +64,12 @@ main {
     box-shadow: none;
 }
 
+.form_name {
+    display: float;
+    width: 200px;
+    background-color: yellow;
+}
+
 .card-auth {
     width: 400px;
     border: 0;
